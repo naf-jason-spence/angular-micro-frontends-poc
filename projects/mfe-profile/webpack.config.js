@@ -12,7 +12,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "shell",
+    uniqueName: "mfeProfile",
     publicPath: "auto"
   },
   optimization: {
@@ -31,16 +31,17 @@ module.exports = {
         library: { type: "module" },
 
         // For remotes (please adjust)
-        // name: "shell",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/shell/src/app/app.component.ts',
-        // },
+        name: "mfeProfile",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './projects/mfe-profile/src/app/profile/profile.module.ts',
+        },
 
         // For hosts (please adjust)
         // remotes: {
-        //   "mfeBasket": "http://localhost:4201/remoteEntry.js",
-        //   "mfeProfile": "http://localhost:4202/remoteEntry.js",
+        //     "shell": "http://localhost:4200/remoteEntry.js",
+        //     "mfeBasket": "http://localhost:4201/remoteEntry.js",
+
         // },
 
         shared: share({
